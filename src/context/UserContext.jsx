@@ -21,7 +21,7 @@ export const UserProvider = ({ children }) => {
     const user = users.find((user) => user.username === username && user.password === password);
     if (user) {
       setCurrentUser(user);
-      nav('/home'); // Redirect to the dashboard after successful login
+      nav('/'); // Redirect to the dashboard after successful login
     } else {
       Swal.fire({
         icon: 'error',
@@ -32,17 +32,35 @@ export const UserProvider = ({ children }) => {
   };
 
   const signupUser = (newUser) => {
-    // Simulate creating a new user on the API
     const updatedUsers = [...users, newUser];
-    setUsers(updatedUsers);
-    setCurrentUser(newUser);
-    nav('/dashboard'); // Redirect to the dashboard after successful signup
-    Swal.fire({
-      icon: 'success',
-      title: 'Signup Successful',
-      text: 'You have successfully signed up!',
-    });
+  
+    fetch('http://localhost:3400/users', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(updatedUsers),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        setUsers(data);
+        setCurrentUser(newUser);
+        nav('/'); // Redirect to the dashboard after successful signup
+        Swal.fire({
+          icon: 'success',
+          title: 'Signup Successful',
+          text: 'You have successfully signed up!',
+        });
+      })
+      .catch((error) => {
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: `Error adding user: ${error}`,
+        });
+      });
   };
+  
 
   const contextData = {
     users,
