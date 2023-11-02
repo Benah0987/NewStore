@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar navbar-expand-lg bg-light">
       <div className="container">
-        <Link to="/" className="navbar-brand">SDFT04</Link>
+        <Link to="/" className="navbar-brand">Murang'a Store</Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -20,11 +20,11 @@ function Navbar() {
             <li className="nav-item">
               <Link to="addproduct" className="nav-link active text-danger">Add Product</Link>
             </li>
-            <li className="nav-item">
-              <Link to="products" className="nav-link active text-danger">Products</Link>
-            </li>
+           
           </ul>
-          <button type="button" className="btn btn-danger rounded-5 mx-5 px-4">Login</button>
+          <Link to="/signup" className="btn btn-danger rounded-5 mx-5 px-4">
+        Login
+      </Link>
         </div>
       </div>
     </nav>

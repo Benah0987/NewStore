@@ -15,16 +15,23 @@ function Product() {
       <div className="row">
         {products.length > 0 ? (
           products.map((product) => (
-            <div key={product.id} className="col-4 mb-3 mr-3 px-3">
-              <div className='border bg-light overflow-hidden'>
-                <img src={product.image} className='img-fluid' alt='Product Image' />
-                <h5>{product.name}</h5>
-                <p>{product.description}</p>
-                <p>Price: ${product.price}</p>
-                <p>Available Quantity: {product.quantity}</p>
-                <Link to={`products/${product.id}`} className="btn btn-danger w-100">
-                  View Details
-                </Link>
+            <div key={product.id} className="col-4 mb-3">
+              <div className='border bg-light overflow-hidden' style={{ width: '300px', height: '580px' }}>
+                <img src={product.image} className='img-fluid' alt='Product Image' style={{ width: '100%', height: '60%' }} />
+                <div style={{ padding: '15px' }}>
+                  <h5>{product.name}</h5>
+                  <p>{product.description}</p>
+                  <p>Price: ${product.price}</p>
+                  <p>Available Quantity: {product.quantity}</p>
+
+                  
+                </div>
+                <div style={{ display: 'flex', justifyContent: 'center' }}>
+                    <Link to={`products/${product.id}`} className="btn btn-primary w-40">
+                      View Details
+                    </Link>
+                 </div>
+                
               </div>
             </div>
           ))

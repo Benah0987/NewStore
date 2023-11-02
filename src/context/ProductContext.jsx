@@ -32,13 +32,17 @@ export function ProductProvider({ children }) {
 
     // Fetch Single Product
     const GetSingleProduct = (id) => {
-        fetch(`http://localhost:3400/products/${id}`)
+        // Only fetch the single product if the id changes
+        if (id) {
+          fetch(`http://localhost:3400/products/${id}`)
             .then(res => res.json())
             .then(res => {
-                setSingleProduct(res);
-                console.log("Fetching from Context ", res);
+              setSingleProduct(res);
+              console.log("Fetching from Context ", res);
             });
-    }
+        }
+        // No closing curly brace is needed here
+      };
 
     // Delete Product
     const DeleteProduct = (id) => {

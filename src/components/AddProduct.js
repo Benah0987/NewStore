@@ -1,34 +1,39 @@
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
-import { ProductContext } from '../context/ProductContext'; // Change BlogContext to ProductContext
+import { ProductContext } from '../context/ProductContext';
 
 export default function AddProduct() {
-  const [name, setName] = useState();
-  const [description, setDescription] = useState();
-  const [image, setImage] = useState();
-  const [category, setCategory] = useState();
-  const [price, setPrice] = useState();
-  const [quantity, setQuantity] = useState();
+  const [name, setName] = useState('');
+  const [description, setDescription] = useState('');
+  const [image, setImage] = useState('');
+  const [category, setCategory] = useState('');
+  const [price, setPrice] = useState(0);
+  const [quantity, setQuantity] = useState(0);
 
-  const { AddProduct } = useContext(ProductContext);
-
+  const { products, AddProduct } = useContext(ProductContext);
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    const data = {
+    const newProductId = products.length + 1; // Generate new ID based on the current length of products array
+    const newProduct = {
+      id: newProductId,
       name: name,
       description: description,
       image: image,
       category: category,
-      price: price,
-      quantity: quantity
+      price: parseFloat(price),
+      quantity: parseInt(quantity)
     };
-    AddProduct(data);
 
-    navigate('/'); // Redirect to the home page after adding the product
+    // Add the new product
+    AddProduct(newProduct);
+
+    // Redirect to the home page after adding the product
+    navigate('/');
+    
     Swal.fire({
       position: 'top-end',
       icon: 'success',
