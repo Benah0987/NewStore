@@ -3,27 +3,25 @@ import Layout from "./components/layout/Layout";
 import Home from "./components/Home";
 import About from "./components/About";
 import Contact from "./components/Contact";
-import "./App.css"
-import SingleBlog from "./components/SingleBlog";
-import AddBlog from "./components/AddBlog";
-import { BlogProvider } from "./context/BlogContext";
+import SingleProduct from "./components/SingleProduct";
+import AddProduct from "./components/AddProduct";
+import { ProductProvider } from "./context/ProductContext"; // Update the context import
 
 function App() {
-
   return (
-  <BrowserRouter>
-    <BlogProvider>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route index element={<Home/>} />
-          <Route path="about" element={<About/>} />
-          <Route path="addblog" element={<AddBlog/>} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="blog/:id" element={<SingleBlog />} />
-        </Route>
-      </Routes>
-      </BlogProvider>
-  </BrowserRouter>
+    <BrowserRouter>
+      <ProductProvider> {/* Use ProductProvider instead of BlogProvider */}
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            <Route index element={<Home />} />
+            <Route path="about" element={<About />} />
+            <Route path="addproduct" element={<AddProduct />} /> {/* Updated route for adding a product */}
+            <Route path="contact" element={<Contact />} />
+            <Route path="product/:id" element={<SingleProduct />} /> {/* Updated route for a single product */}
+          </Route>
+        </Routes>
+      </ProductProvider>
+    </BrowserRouter>
   );
 }
 
