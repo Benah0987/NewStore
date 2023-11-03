@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import Swal from 'sweetalert2';
+
 import { ProductContext } from '../context/ProductContext'; // Updated import to ProductContext
 
 export default function SingleProduct() {
-  const nav = useNavigate();
+  
   const { id } = useParams();
 
   const { GetSingleProduct, singleProduct, DeleteProduct } = useContext(ProductContext); // Utilize ProductContext
@@ -29,7 +29,8 @@ export default function SingleProduct() {
           <p>Available Quantity: {singleProduct && singleProduct.quantity}</p>
         </div>
         <div className='col-4 p-3 card bg-light'>
-          <button onClick={handleDelete} type="button" className="btn btn-danger">Delete</button>
+          <button onClick={handleDelete} type="button" className="btn btn-danger mb-5 w-5">Delete</button>
+          <button type="button" className="btn btn-warning w-30">Update</button>
         </div>
       </div>
     </div>

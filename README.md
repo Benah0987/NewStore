@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+##  Store Management Web Application
+# Overview
+The Store Management Web Application is a simple yet effective tool for managing a store's inventory. It allows users to perform various tasks, such as signing up, logging in, creating products, viewing product details, deleting products, and updating product information.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Features
+User Authentication:
 
-## Available Scripts
+Sign Up
+Login
+Product Management:
 
-In the project directory, you can run:
+Add a Product to the Inventory
+View Product Details
+Delete Products
+Update Product Information
 
-### `npm start`
+## Technologies Used
+# Frontend:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+React
+HTML/CSS/Bootstrap/JavaScript
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+# Backend:
 
-### `npm test`
+json
+Database:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+JSON Server json-server --watch db.json --port 3400
 
-### `npm run build`
+# Installation and Setup
+Clone the repository:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+bash
+Copy code
+git clone <repository_url>
+Install necessary dependencies:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+bash
+Copy code
+npm install
+Start the frontend server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+Copy code
+npm start
+Start the backend (if applicable):
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+json-server --watch db.json --port 3001
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Usage
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Navigate to the registration page and sign up using a valid email and password.
+Log in with your registered credentials.
+View the list of products in stock.
+Add, delete, and update product information as needed.
 
-## Learn More
+# Contributing
+Include guidelines for contributors who wish to help or collaborate with the project. Provide instructions for submitting issues or feature requests.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+# License
+MIT License
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+# Credits
+credits to Benayah for using the resources availablle to complete the project
